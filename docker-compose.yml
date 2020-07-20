@@ -1,0 +1,12 @@
+version: '2'
+services:
+  db:
+    container_name: POSTGRES_BENCHMARKS
+    image: postgres:11.2-alpine
+    environment:
+      - TZ=America/Fortaleza
+      - POSTGRES_DB=benchmarks_db
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - 5432:5432
