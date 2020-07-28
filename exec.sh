@@ -1,7 +1,9 @@
 #!/bin/bash
 
+TEST_NUMBER_EXEC=100
+
+
 function ProgressBar {
-# Process data
   let _progress=(${1}*100/${2}*100)/100
   let _done=(${_progress}*4)/10
   let _left=40-$_done
@@ -12,15 +14,19 @@ function ProgressBar {
   printf "${3} : [${_fill// /#}${_empty// /-}] ${_progress}%%\n"
 }
 
-generate_bookshelf() {
-  echo "[]" > bookshelf.json
+generate_data() {
+  NAME=${1};
+  FILENAME="${1,,}"
 
-  for i in $(seq 100); do
-    node src/Bookshelf
+  echo "[]" > ${FILENAME}.json
+
+  for i in $(seq ${TEST_NUMBER_EXEC}); do
+    node src/${NAME}
     clear
-    ProgressBar ${i} 100 "Gerando dados do Bookshelf"
+    ProgressBar ${i} TEST_NUMBER_EXEC "Gerando dados do ${NAME}"
   done;
-  echo -e "Dados do Bookshelf foram gerados\n"
+  echo -e "Dados do ${NAME} foram gerados\n"
 }
 
-generate_bookshelf
+generate_data "Bookshelf" "bookshelf";
+generate_data "Objection";
