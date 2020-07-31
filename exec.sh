@@ -28,5 +28,15 @@ generate_data() {
   echo -e "Dados do ${NAME} foram gerados\n"
 }
 
-generate_data "Bookshelf" "bookshelf";
+generate_data "Bookshelf";
 generate_data "Objection";
+generate_data "Sequelize";
+
+# gerar graficos
+clear
+echo "Gerando gráficos..."
+
+node graph.js
+clear
+
+echo "Gráficos gerados"

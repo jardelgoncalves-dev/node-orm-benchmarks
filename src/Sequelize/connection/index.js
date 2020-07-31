@@ -3,10 +3,13 @@ const dbConfig = require('../config/database');
 
 const connection = new Sequelize(dbConfig.development);
 
-// User.init(connection);
-// Post.init(connection);
+const User = require('../models/User')
+const Post = require('../models/Post')
 
-// User.associate(connection.models);
-// Post.associate(connection.models);
+User.init(connection);
+Post.init(connection);
+
+User.associate(connection.models);
+Post.associate(connection.models);
 
 module.exports = connection;

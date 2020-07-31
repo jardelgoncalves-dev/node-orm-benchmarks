@@ -18,6 +18,11 @@ async function exec() {
 
   const time = new Time();
 
+  await new Users({
+    first_name: 'Open',
+    last_name: 'Connection'
+  }).save()
+
   time.init('create:users')
   const user = await new Users({
     first_name: 'Jardel',

@@ -20,6 +20,11 @@ async function exec() {
 
   const time = new Time();
 
+  await User.query().insert({
+    first_name: 'Open',
+    last_name: 'Connection'
+  })
+
   time.init('create:users')
   const user = await User.query().insert({
     first_name: 'Jardel',
