@@ -51,6 +51,16 @@ module.exports = {
         type: Sequelize.ENUM('value1','value2'),
         defaultValue: 'value1',
       },
+      json: {
+        type: Sequelize.JSON,
+        allowNull: false,
+        defaultValue: { "test": 1, "test2": 2, "test3": "text" }
+      },
+      jsonb: {
+        type: Sequelize.JSONB,
+        allowNull: false,
+        defaultValue: { "test": 1, "test2": 2, "test3": "text" }
+      },
       created_at: {
         type: Sequelize.DATE,
         allowNull: false,

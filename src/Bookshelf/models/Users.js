@@ -5,5 +5,7 @@ module.exports = connection.model('users', {
   tableName: 'users',
   posts() {
     return this.hasMany(Posts)
+    .query(qb => qb.select('*'))
+    .orderBy('created_at', 'desc');
   }
 })
