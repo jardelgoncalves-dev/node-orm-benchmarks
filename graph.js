@@ -82,8 +82,8 @@ function generateGraph (tempData, title, filename = 'test') {
       .attr('height', (d) => { return height - yScale(d.value); })
       .style('fill', 'orange');
   
-  fs.writeFileSync(`${filename}.svg`, d3n.svgString());
-  sharp(`${filename}.svg`)
+  fs.writeFileSync(`results/${filename}.svg`, d3n.svgString());
+  sharp(`results/${filename}.svg`)
     .png()
     .toFile(`${filename}.png`)
     .then((info) => {
