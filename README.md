@@ -88,7 +88,7 @@ Como `Objection.js` e `Bookshelf` usam o knex, ambos serão apresentado de forma
     select "users".* from "users"
   ```
 
-- Buscar usuarios
+- Buscar posts
   -  Sequelize
     ```
       SELECT "id", "title", "description", "content", "user_id", "deleted_at", "created_at" AS "createdAt", "updated_at" AS "updatedAt", "user_id" AS "UserId" FROM "posts" AS "Post";
