@@ -85,7 +85,7 @@ function generateGraph (tempData, title, filename = 'test') {
   fs.writeFileSync(`results/${filename}.svg`, d3n.svgString());
   sharp(`results/${filename}.svg`)
     .png()
-    .toFile(`${filename}.png`)
+    .toFile(`results/${filename}.png`)
     .then((info) => {
         console.log('Svg to Png conversion completed', info);
     })
