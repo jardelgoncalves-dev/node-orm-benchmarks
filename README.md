@@ -2,6 +2,11 @@
 Este repositório não tem como objetivo apontar de forma direta qual o melhor ORM, novos cenários ou até mesmo novas execuções do cenário abaixo (básico) podem modificar a performance de cada um.
 
 ## Executando o projeto na sua máquina
+- É necessário ter o `Node.js` e `npm` instalado
+- Instale as dependências executando:
+  ```
+    npm install
+  ```
 - Instale o `docker` e `docker-compose`
 - Na raiz do projeto execute:
   ```
